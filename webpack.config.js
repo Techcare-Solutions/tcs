@@ -21,13 +21,10 @@ const config = {
                 }
             )
         ),
-        pages.map(
-            (page) => new MiniCssExtractPlugin(
-                {
-                    filename: `${page}.css`,
-                }
-            )
-        ),
+        new MiniCssExtractPlugin({
+                filename: "main.css",
+            }
+        )
     ),
     resolve: {
         extensions: [".ts", ".js"],

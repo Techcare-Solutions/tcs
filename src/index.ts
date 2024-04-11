@@ -1,6 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.css'
+import './css/site.css'
 
-import {loadFooter} from "./js/loadTemplates";
+import {loadFooter, loadNavbar} from "./js/loadTemplates";
 
+window.addEventListener("load", INIT);
 
-loadFooter();
+function INIT() {
+    //loadFooter();
+    loadNavbar();
+}
