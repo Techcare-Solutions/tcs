@@ -1,11 +1,11 @@
 import path from 'path';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 
 const pages = ['index', 'test'];
 
 const config = {
-    mode: "development",
     entry: {
         index: './src/index.ts',
         test: './src/test.ts',
@@ -31,13 +31,6 @@ const config = {
         extensionAlias: {
             ".js": ['.js', '.ts']
         },
-    },
-    devServer: {
-        hot: false,
-        static: {
-            directory: path.resolve("dist"),
-        },
-        open: true,
     },
     output: {
         filename: "[name].bundle.js",
@@ -74,6 +67,11 @@ const config = {
             },
         ]
     },
-}
+    optimization: {
+        minimizer: [
+            new CssMinimizerPlugin(),
+        ],
+    },
+};
 
 export default config;
