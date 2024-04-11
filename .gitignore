@@ -3,3 +3,4 @@
 *.js
 !webpack.*.js
 /.idea/
+package-lock.json
