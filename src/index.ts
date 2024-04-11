@@ -7,5 +7,5 @@ window.addEventListener("load", INIT);
 
 function INIT() {
     //loadFooter();
-    loadNavbar();
+    //loadNavbar();
 }
