@@ -1,19 +1,50 @@
-const path = require("path");
-const {loader} = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-module.exports = {
+const pages = ['index', 'test'];
+
+const config = {
+    mode: "development",
     entry: {
-        index: './src/index.js',
+        index: './src/index.ts',
+        test: './src/test.ts',
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: "TCS"
-        }),
-    ],
+    plugins: [].concat(
+        pages.map(
+            (page) => new HtmlWebpackPlugin(
+                {
+                    inject: true,
+                    template: `./src/html/${page}.html`,
+                    filename: `${page}.html`,
+                    chunks: [page],
+                }
+            )
+        ),
+        pages.map(
+            (page) => new MiniCssExtractPlugin(
+                {
+                    filename: `${page}.css`,
+                }
+            )
+        ),
+    ),
+    resolve: {
+        extensions: [".ts", ".js"],
+        extensionAlias: {
+            ".js": ['.js', '.ts']
+        },
+    },
+    devServer: {
+        hot: false,
+        static: {
+            directory: path.resolve("dist"),
+        },
+        open: true,
+    },
     output: {
         filename: "[name].bundle.js",
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve("dist"),
         clean: true,
     },
     module: {
@@ -22,7 +53,7 @@ module.exports = {
                 test: /\.s?css$/,
                 use: [
                     //"style-loader",
-                    loader,
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader"
                 ]
@@ -47,3 +78,5 @@ module.exports = {
         ]
     },
 }
+
+export default config;
