@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "build": "webpack --config webpack.dev.js",
-    "prod": "webpack --config webpack.prod.js",
+    "prod": "(npm ci || npm i) && echo 'Node packages successfully installed' && echo 'compiling files' && webpack --config webpack.prod.js && echo 'Files compiled successfully'",
     "start": "webpack serve --open --config webpack.dev.js"
   },
   "devDependencies": {
