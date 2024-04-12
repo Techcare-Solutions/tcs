@@ -1,3 +1,22 @@
+@use 'sass:math';
+
+@font-face {
+  font-family: 'tcs general';
+  src: url("../assets/fonts/Noto_Serif_Gujarati/NotoSerifGujarati-VariableFont_wght.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'tcs h';
+  src: url("../assets/fonts/Mitr/Mitr-Regular.ttf");
+}
+
 $tcs_blue: #0096B1;
 $tcs_green_light: #7ED857;
 $tcs_green_dark: #5CAB40;
+$neutral_dark_gray: #333333;
+
+$ms_default: 14.22%;
+$me_default: 14.22%;
+
+$general_font: 'tcs general';
+$h_font: 'tcs h'

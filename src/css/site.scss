@@ -1,0 +1,6 @@
+@use  "vars" as vars;
+@use "navbar";
+
+body {
+  font-family: vars.$general_font;
+}
