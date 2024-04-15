@@ -1,35 +1,51 @@
 <!-- Description: This is the navbar for the website. It is included in all pages. -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <h2 class="d-none">Navbar</h2>
-    <!--    <a class="navbar-brand" href="../../index.html"><img src="/resources/logo.png" alt="TechCare Solutions logo"
-                                                             width="73"
-                                                             height="30"></a>-->
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a id="navbarHome" class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a id="navbarAbout" class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a id="portfolioDropdown" class="nav-link dropdown-toggle" href="portfolio.html" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Portfolio
-                </a>
-                <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
-                    <a class="dropdown-item" href="#">Project</a>
-                    <a class="dropdown-item" href="#">Project2</a>
-                    <div class="dropdown-divider"></div>
-                    <a id="navbarOtherProjects" class="dropdown-item" href="portfolio.html">Other projects</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a id="navbarServices" class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-                <a id="navbarContact" class="nav-link" href="contact.html">Contact</a>
-            </li>
-        </ul>
+<nav class="navbar navbar-expand-lg fixed-top md md-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            Tech care solutions
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Over</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Services
+                            <i class="bi bi-chevron-down h6"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Another action</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </nav>

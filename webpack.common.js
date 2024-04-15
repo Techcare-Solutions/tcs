@@ -6,10 +6,10 @@ import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 const pages = ['index', 'test'];
 
 const config = {
-    entry: {
-        index: './src/index.ts',
-        test: './src/test.ts',
-    },
+    entry: pages.reduce((config, page) => {
+        config[page] = `./src/${page}.ts`;
+        return config;
+    }, {}),
     plugins: [].concat(
         pages.map(
             (page) => new HtmlWebpackPlugin(

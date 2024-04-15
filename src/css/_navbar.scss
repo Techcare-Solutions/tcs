@@ -1,0 +1,33 @@
+@use "vars" as vars;
+
+.nav-link {
+  --bs-nav-link-font-size: 20px;
+  --bs-nav-link-color: black;
+
+  i {
+    color: vars.$tcs_blue;
+  }
+}
+
+a.nav-link i.bi.bi-chevron-down.h6::before {
+  font-weight: bolder !important;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.md {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (min-width: 992px) {
+  .md-lg {
+    margin-left: vars.$ms_default;
+    margin-right: vars.$me_default;
+  }
+}
+
+
+
